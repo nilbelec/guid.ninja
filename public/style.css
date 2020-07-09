@@ -1,0 +1,179 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #212529;
+    color: #fff;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #1b1e21;
+}
+
+#title {
+    text-shadow: #000 6px 6px 0px;
+    padding: 0.5rem;
+    margin: 0;
+}
+
+.content {
+    flex: 1;
+    overflow: auto;
+    padding: 1rem 4rem;
+}
+
+.buttons > div {
+    display: inline-block;
+}
+
+footer {
+    background-color: #1b1e21;
+    padding: 1rem 2rem;
+    font-size: 0.7rem;
+    text-align: right;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+footer ul li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.ta-center {
+    text-align: center;
+}
+
+.ta-right {
+    text-align: right;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.fs-08 {
+    font-size: 0.8rem;
+}
+
+a {
+    color: #209cee;
+    text-transform: uppercase;
+}
+
+a:hover {
+    color: #108de0;
+    text-decoration: none;
+}
+
+.ta-justified {
+    text-align: justify;
+}
+
+.baloon-container {
+    display: inline;
+    position: relative;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    color: #212529
+}
+
+#copied {
+    top: -100;
+    left: 60;
+}
+
+#guid {
+    vertical-align: middle;
+    font-size: 1.3rem;
+    word-break: break-all;
+}
+
+.dialog-menu {
+    padding-inline-start: 0;
+    text-align: center;
+}
+
+input[type=checkbox], input[type=radio] {
+    opacity: 0;
+}
+
+.d-md-none {
+    display: none;
+}
+
+@media (max-width: 712px) {
+
+    .content {
+        padding: 1rem 2rem;
+    }
+
+    .d-sm-none {
+        display: none;
+    }
+
+    .d-md-none {
+        display: inherit;
+    }
+
+    .buttons > div {
+        float: left;
+        width: 33.33333%;
+    }
+
+    .nes-btn {
+        margin-bottom: 0.5rem;
+        width: 100%;
+        font-size: 0.8rem;
+    }
+
+    #guid {
+        font-size: 1rem;
+    }
+
+    #copied {
+        left: 10;
+    }
+
+    footer ul {
+        float: none;
+        text-align: center;
+    }
+
+    footer ul li {
+        display: block;
+        margin: 0.5rem;
+    }
+
+    footer ul li:last-child {
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,173 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel=”shortcut icon” type=”image/png” href=”favicon.ico />
+    <title>Online retro UUID generator - GUID.ninja</title>
+
+    <meta name="description" content="Generate online all the UUIDs you need easily" />
+    <link rel="canonical" href="https://guid.ninja" />
+    <meta name="keywords"
+        content="guid generator, uuid generator, guid ninja, uuid ninja, guid, uuid, bulk guid generator, bulk uuid generator, random guid, random uuid, online guid, online guid, globally unique identifier, universally unique identifier, unique identifier, javascript guid, javascript uuid, java guid, java uuid, C# guid, C# uuid">
+
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" />
+    <link href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.5.0/dialog-polyfill.min.css"
+        rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83738100-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-83738100-2');
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1 id="title" class="ta-center">
+                GUID<small><span class="nes-text is-warning">.ninja</span></small>
+            </h1>
+        </header>
+        <div class="content">
+            <div class="ta-center mb-2">
+                <h5>ONLINE RETRO UNIQUE ID GENERATOR</h5>
+            </div>
+            <div class="nes-container is-rounded is-dark">
+                <p id="guid" class="ta-center">&nbsp;</p>
+            </div>
+            <div class="ta-center mt-2 options">
+                <label>
+                    <input id="use-upper" type="checkbox" class="nes-checkbox is-dark" />
+                    <span>
+                        <span class="d-sm-none">UPPER</span>
+                        <span class="d-md-none">UP</span>
+                    </span>
+                </label>
+                <label>
+                    <input id="use-braces" type="checkbox" class="nes-checkbox is-dark" />
+                    <span>
+                        <span class="d-sm-none">{braces}</span>
+                        <span class="d-md-none">{}</span>
+                    </span>
+                </label>
+                <label>
+                    <input id="use-hyphens" type="checkbox" class="nes-checkbox is-dark" checked />
+                    <span>
+                        <span class="d-sm-none">hy-phe-ns</span>
+                        <span class="d-md-none">-</span>
+                    </span>
+                </label>
+            </div>
+            <div class="ta-center mt-2 buttons">
+                <div>
+                    <button type="button" id="more" class="nes-btn is-primary">
+                        <span class="d-sm-none">New one...</span>
+                        <span class="d-md-none">New</span>
+                    </button>
+                </div>
+                <div>
+                    <div class="baloon-container">
+                        <button type="button" id="copy" class="nes-btn is-success">Copy!</button>
+                        <div id="copied" class="nes-balloon from-left popup">
+                            <p>Copied!</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" id="bulk" class="nes-btn is-warning">
+                        <span class="d-sm-none">Need more?</span>
+                        <span class="d-md-none">More?</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <ul>
+                <li>
+                    <a href="#" id="disclaimer">
+                        DISCLAIMER
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="cookies">
+                        COOKIES
+                    </a>
+                </li>
+            </ul>
+            <a target="_blank" href="http://monkeyprojectz.com" rel="external nofollow">© 2019 Monkey Projectz</a>
+        </footer>
+    </div>
+
+    <dialog class="nes-dialog" id="dialog-bulk">
+        <p class="title">How many do you need?</p>
+        <div class="nes-field">
+            <input type="number" required min="1" id="bulk-input" class="nes-input">
+        </div>
+        <menu class="dialog-menu">
+            <button type="button" id="bulk-btn" class="nes-btn is-primary">Generate</button>
+            <button type="button" id="close-bulk" class="nes-btn is-error">Cancel</button>
+        </menu>
+        <progress id="bulk-progress" class="nes-progress is-success mt-1" value="50" max="100"></progress>
+    </dialog>
+
+    <dialog class="nes-dialog" id="dialog-disclaimer">
+        <p class="title">DISCLAIMER</p>
+        <div>
+            <p>
+                The identifiers generated by this site are provided as is without warranty.
+                There is no guarantee of their uniqueness or suitability.
+                You are responsible for using the identifiers and assume any risk to using them.
+            </p>
+            <p>
+                Read more about unique identifiers at <a target="_blank" rel="external nofollow"
+                    href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Wikipedia</a>.
+            </p>
+            <p>
+                If you use any UUID generated by this site, you agree to this terms.
+            </p>
+        </div>
+        <menu class="dialog-menu">
+            <button class="nes-btn is-primary" id="close-disclaimer">
+                Got it!
+            </button>
+        </menu>
+    </dialog>
+
+    <dialog class="nes-dialog" id="dialog-cookies">
+        <p class="title">COOKIES POLICY</p>
+        <div>
+            <p>
+                We use the following cookies only to analyze the traffic to our site:
+            </p>
+            <ul>
+                <li><strong>Google Analytics</strong>:
+                    _ga, _gid, _gat_gtag_UA_83738100_2. [<a target="_blank" rel="external nofollow"
+                        href="https://policies.google.com/privacy">Privacy policy</a>]</li>
+            </ul>
+            <p>
+                By using our site, you consent the use of that cookies.
+            </p>
+        </div>
+        <menu class="dialog-menu">
+            <button class="nes-btn is-primary" id="close-cookies">
+                I accept!
+            </button>
+        </menu>
+    </dialog>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.5.0/dialog-polyfill.min.js"></script>
+    <script src="FileSaver.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
