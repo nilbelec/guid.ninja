@@ -1,5 +1,5 @@
 # GUID.ninja
 
-Online retro unique ID generator
+Retro Javascript unique ID generator
 
 https://guid.ninja
